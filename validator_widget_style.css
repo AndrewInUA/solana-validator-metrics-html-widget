@@ -1,0 +1,159 @@
+/* ==========================================
+   Solana Validator Widget - CSS Styles
+   Author: AndrewInUA
+   Description: Responsive, dark-theme widget
+   ========================================== */
+
+:root {
+  --primary-bg: #0e1a35;
+  --card-bg: #131f42;
+  --accent-color: #3cf3e9;
+  --text-light: #ffffff;
+  --text-muted: #cccccc;
+  --card-radius: 12px;
+  --font-main: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-bg);
+  color: var(--text-light);
+  font-family: var(--font-main);
+}
+
+/* Widget container */
+.validator-widget {
+  background-color: transparent;
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Header */
+.widget-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.widget-description {
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+
+/* Commission section */
+.commission-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.commission-box {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.label {
+  font-size: 0.95rem;
+  color: var(--accent-color);
+  margin-bottom: 0.25rem;
+}
+
+.value {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.small-text {
+  font-size: 1.25rem;
+  word-break: break-word;
+}
+
+.last-updated {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+/* Metrics grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.metric {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.source {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+.vote-account-box {
+  background: #101b3c;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.vote-account-box:hover {
+  background: #16244e;
+}
+
+.vote-account-box .label {
+  font-size: 0.85rem;
+  color: #00e6e6;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.vote-account-box .value {
+  font-family: monospace;
+  font-size: 1.05rem;
+  color: #ffffff;
+  word-break: break-all;
+}
+
+.vote-account-box .copy-hint {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  color: #ccc;
+  margin-top: 0.25rem;
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .widget-title {
+    font-size: 1.6rem;
+  }
+  .value {
+    font-size: 1.3rem;
+  }
+}
