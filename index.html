@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solana Validator Widget by AndrewInUA — Live Metrics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <!-- Widget container with configurable vote account -->
+  <div id="solana-validator-widget" data-vote-account="Your-vote-address-here"></div>
+
+<section class="validator-widget">
+  <div class="widget-container">
+    <h2 class="widget-title" id="widget-title">Loading Validator…</h2>
+    <p class="widget-description">
+      These metrics are updated live from trusted APIs like Stakewiz, Jito, Edgevana, and others.<br>
+      They reflect the current performance of the validator — commissions, rewards, uptime, and more.<br><br>
+      Easily embeddable for any Solana validator — just set your vote account and you’re ready to go.
+    </p>
+    
+    <div class="last-updated" id="last-updated">Last updated: —</div>
+    
+    <!-- Vote-account -->
+    <div class="vote-account-box" onclick="copyVoteAccount()" title="Click to copy">
+      <div class="label">Vote Account</div>
+      <div class="value" id="vote-account-display">Loading...</div>
+      <div class="copy-hint" id="copy-hint">Click to copy</div>
+    </div>
+
+    <!-- Commissions -->
+    <div class="commission-row">
+      <div class="commission-box">
+        <div class="label">Standard Commission</div>
+        <div class="value" id="commission-value">Loading...</div>
+      </div>
+      <div class="commission-box">
+        <div class="label">Jito MEV Commission</div>
+        <div class="value" id="jito-commission-value">Loading...</div>
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="label">Client Version</div>
+        <div class="value" id="client-version">Loading...</div>
+        <div class="source">Source: Stakewiz</div>
+      </div>
+      <div class="metric">
+        <div class="label">Location</div>
+        <div class="value small-text" id="validator-location">Loading...</div>
+        <div class="source">Source: Stakewiz</div>
+      </div>
+      <div class="metric">
+        <div class="label">APY</div>
+        <div class="value" id="apy-value">Loading...</div>
+        <div class="source">Source: Stakewiz</div>
+      </div>
+      <div class="metric">
+        <div class="label">Stake</div>
+        <div class="value" id="stake-value">Loading...</div>
+        <div class="source">Source: Stakewiz</div>
+      </div>
+      <div class="metric">
+        <div class="label">Uptime</div>
+        <div class="value" id="uptime-value">Loading...</div>
+        <div class="source">Source: Stakewiz</div>
+      </div>
+      <div class="metric">
+        <div class="label">Skip Rate</div>
+        <div class="value" id="skiprate-value">Loading...</div>
+        <div class="source">Source: Stakewiz</div>
+      </div>
+      <div class="metric">
+      <div class="label">Stakewiz Rank</div>
+        <div class="value" id="stakewiz-rank">Loading...</div>
+        <div class="source">Source: Stakewiz</div>
+      </div>
+      <div class="metric">
+        <div class="label">Validators.app Score</div>
+        <div class="value" id="va-score">Loading...</div>
+        <div class="source">Points: <span id="va-raw-score">—</span> / 13</div>
+      </div>
+      <div class="metric">
+        <div class="label">JPool Rank</div>
+        <div class="value" id="jpool-rank">Loading...</div>
+        <div class="source">Source: JPool</div>
+      </div>
+      <div class="metric">
+        <div class="label">Edgevana Rank</div>
+        <div class="value" id="edgevana-rank">Loading...</div>
+        <div class="source" id="edgevana-source">Source: Edgevana</div>
+      </div>
+      <div class="metric">
+        <div class="label">Jito MEV Score</div>
+        <div class="value" id="jito-value">Loading...</div>
+        <div class="source">Source: Jito Labs</div>
+      </div>
+      <div class="metric">
+        <div class="label">Vault Pool Rank</div>
+
+        <div class="value" id="vault-rank">Not in pool</div>
+        <div class="source">Target Stake Rank</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Link your CSS file externally in your page -->
+<link rel="stylesheet" href="validator_widget_style.css">
+
+<!-- Load widget functionality -->
+<script src="validator-widget.js"></script>
+
+</body>
+</html>
