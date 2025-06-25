@@ -192,7 +192,7 @@ async function fetchEdgevanaRank() {
       const valueElement = document.getElementById("vote-account-display");
       const voteAccount = valueElement.innerText;
     
-      // Перевірка на наявність API
+      // Check for API availability
       if (!navigator.clipboard) {
         console.warn("Clipboard API not available");
         return;
